@@ -1,0 +1,798 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #ffffff;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .navbar{
+    position: fixed;
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: 142px;
+    background-color: #fafafa;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  nav{
+    width: 100%;
+    padding: 16px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .logo img {
+    height: 112px;
+    width: 86px; /* Adjust the width as needed */
+    margin-top: -16px;
+    margin-left: -121px; /* Adjust the margin as needed to create space between text and image */
+  }
+  .logo h1{
+    width: 266px;
+    height: 124px;
+    margin-left: 200px;
+    position: absolute;
+    left: -10px; 
+    color: #0c57ed;
+    font-weight: 800;
+    font-size: 58px;
+    margin-top: 38px;
+    font-family: Arial, Helvetica, sans-serif;
+    flex: 1;
+    white-space: nowrap; /* Added this line to prevent wrapping */
+  }
+  
+  nav ul{
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 12px;
+  }
+  nav ul li{
+    display: inline-block;
+    list-style: none;
+    /*margin: 26px 26px;*/
+    margin: 0 2%;
+  }
+  nav ul li a{
+    color: #202020;
+    text-decoration: none !important;
+    font-size: 34px;
+    font-weight: 400;
+    position: relative;
+    right: -100px;
+    /*text-decoration: none !important;*/
+    
+  }
+  nav ul li a:hover {
+    color: #0051d3;
+  }
+  #homeLink.active {
+    color: #0051d3; /* Blue color for active state */
+  }
+  
+  .user-profile{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 60%;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    right: 40px;
+    margin-top: 10px;
+    border: 4px solid transparent;
+  }
+  .user-profile:hover{
+    border: 4px solid #d6d6d6;
+  }
+  /*
+  .sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 360px;
+    transition: opacity 0.5s;
+    opacity: 0; /* Initially hide the menu 
+    display: flex;
+    flex-direction: column; /* Stack menu items vertically 
+    align-items: flex-end; /* Adjust alignment as needed 
+    background: #ffffff;
+    overflow:hidden;
+    transition: max-height 1s;
+    z-index: 1; /* Ensure the menu is on top of other elements
+  }
+  
+  .sub-menu-wrap.open-menu {
+    opacity: 1; /* Show the menu when open 
+  }
+  */
+  
+  .sub-menu-wrap{
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    width: 421px;
+    max-height: 0px;
+    overflow: hidden;
+    border-radius: 16px;
+    transition: max-height 0.5s, box-shadow 0.5s; 
+    box-shadow: 6px 8px 26px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  .sub-menu-wrap.open-menu{
+    max-height: 800px;
+    max-width: 800px;
+  }
+  
+  .sub-menu{
+    background: #ffffff;
+    padding: 21px;
+    margin: -4px;
+    border-radius: 4px;
+  }
+  
+  .user-info{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    box-sizing: border-box;
+    margin-left: 4px;
+    width: 348px;
+    height: 80px;
+    margin-top: 0px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .user-info h3{
+    font-size: 24px;
+    font-weight: bold;
+    color: #404040;
+    margin-top: 12px;
+    margin-left: 100px;
+    text-decoration: solid;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .user-info img{
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    margin-right: 260px;
+    margin-top: 12px;
+    object-fit: contain;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .user-info:hover {
+    background-color: #f4f4f4;
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
+  }
+  .user-info-box hr{
+    border: 0;
+    height: 2px;
+    width: 332px;
+    background: #cdcdcd;
+    margin-top: 14px;
+    margin-left: 12px;
+  }
+  .user-info-box {
+    height: 130px;
+    width: 376px;
+    margin-left: 5px;
+    border: 2px; /* Add a border around the box */
+    border-radius: 16px; /* Add rounded corners */
+    padding: 10px; /* Add some space inside the box */
+    margin-bottom: 30px; /* Add some space between boxes */
+    box-shadow: 1px 8px 26px rgba(0, 0, 0, 0.2);
+  }
+  
+  .user-info-box:hover{
+    box-shadow: 6px 8px 26px rgba(0, 0, 0, 0.2);
+    background-color: none;
+  }
+  
+  .sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #404040;
+    height: 76px;
+    border-radius: 12px;
+    margin-top: -6px;
+  }
+  .sub-menu-link p{
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    padding-left: 20px;
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: solid;
+    color: #363636;
+  }
+  
+  
+  .sub-menu-link img{
+    width: 66px;
+    height: 54px;
+    background: #e2e1e4;
+    border-radius: 50%;
+    padding: 12px;
+    margin-left: 12px;
+  }
+  
+  
+  /*
+  .sub-menu-link:hover .chevron {
+    color: #007bff; /* Change to the color you prefer
+  }
+  */
+  
+  .sub-menu-link .chevron {
+    margin-top: 3px; /* Adjust this value to move the chevron upwards */
+    margin-right: 26px;
+  }
+  
+  .sub-menu-link:hover {
+    text-decoration: solid;
+    color: #0051d3;
+    background-color: #f4f4f4;
+  }
+  
+  .sub-menu-link span{
+    font-size: 17px;
+    transition: transform 0.8s;
+  }
+  .sub-menu-link:hover span{
+    transform: translateX(6px);
+  }
+  
+  #editProfileForm{
+    position: absolute;
+    height: 312px;
+    width: 422px;
+    border-radius: 16px;
+    margin-left: -18px;
+    margin-top: -251px;
+    background: #ffffff;
+    transition: max-height 0.5s, box-shadow 0.5s; 
+    box-shadow: 6px 8px 26px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Set a high z-index to ensure it's on top of other elements */
+    display: none; /* Hide it by default */
+    padding: 20px; /* Add some padding for content */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    transition: height 0.5s ease; /* Add a transition for the height property */
+    transition: max-height 0.5s, box-shadow 0.5s, opacity 0.5s;
+  }
+  #editProfileForm #back_arrow_edit{
+    display: flex;
+    cursor: pointer;
+    height: 48px;
+    width: 50px;
+    margin-left: 10px;
+    margin-top: 4px !important;
+    border-radius: 50%;
+    padding: 12px;
+  }
+  #editProfileForm #back_arrow_edit:hover{
+    background-color: #f4f4f4;
+  }
+  
+  #editProfileForm span{
+    display: flex;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: solid;
+    margin-left: 76px;
+    margin-top: -48px;
+  }
+  #editProfileForm img{
+    height: 112px;
+    width: 112px;
+    align-items: center;
+    margin-right: 118px;
+    margin-top: 18px;
+  }
+  .file-container {
+    display: flex;
+    align-items: center;
+    margin-top: 160px;
+  }
+  label{
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    background-color: #1e70f5;
+    color: #ffffff;
+    border: none;
+    height: 42px;
+    width: 121px;
+    margin-left: 24px;
+    border-radius: 9px;
+    padding: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  label:hover{
+    background-color:#0381ff ;
+    box-shadow :0px0px10px rgba(0 ,0 ,0 ,0.3 );
+  }
+  #file-input{
+    display: none;
+  }
+  
+  .upload_profile{
+    color: #ffffff;
+    background-color: #1e70f5;
+    border-radius: 9px;
+    border: none;
+    height: 42px;
+    width: 121px;
+    margin-left: 92px;
+    margin-bottom: 8px;
+    transition: max-height 0.5s, box-shadow 0.5s; 
+    box-shadow: 6px 8px 26px rgba(0, 0, 0, 0.2);
+  }
+  .upload_profile:hover {
+    background-color:#0381ff ;
+    box-shadow :0px0px10px rgba(0 ,0 ,0 ,0.3 );
+  }
+  
+  #SettingsForm{
+    position: absolute;
+    overflow: hidden;
+    height: 312px;
+    width: 422px;
+    border-radius: 16px;
+    margin-left: -18px;
+    margin-top: -318px;
+    background: #ffffff;
+    transition: max-height 0.5s, box-shadow 0.5s; 
+    box-shadow: 6px 8px 26px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Set a high z-index to ensure it's on top of other elements */
+    display: none; /* Hide it by default */
+    padding: 20px; /* Add some padding for content */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    transition: height 0.5s ease; /* Add a transition for the height property */
+    transition: max-height 0.5s, box-shadow 0.5s, opacity 0.5s;
+  }
+  
+  #SettingsForm #back_arrow_settings{
+    display: flex;
+    cursor: pointer;
+    height: 48px;
+    width: 50px;
+    margin-left: 10px;
+    margin-top: 4px !important;
+    border-radius: 50%;
+    padding: 12px;
+  }
+  #SettingsForm #back_arrow_settings:hover{
+    background-color: #f4f4f4;
+  }
+  
+  #SettingsForm span{
+    display: flex;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: solid;
+    margin-left: 76px;
+    margin-top: -48px;
+  }
+  
+  #HelpForm{
+    position: absolute;
+    overflow: hidden;
+    height: 312px;
+    width: 422px;
+    border-radius: 16px;
+    margin-left: -18px;
+    margin-top: -388px;
+    background: #ffffff;
+    transition: max-height 0.5s, box-shadow 0.5s; 
+    box-shadow: 6px 8px 26px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Set a high z-index to ensure it's on top of other elements */
+    display: none; /* Hide it by default */
+    padding: 20px; /* Add some padding for content */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    transition: height 0.5s ease; /* Add a transition for the height property */
+    transition: max-height 0.5s, box-shadow 0.5s, opacity 0.5s;
+  }
+  
+  #HelpForm #back_arrow_help{
+    display: flex;
+    cursor: pointer;
+    height: 48px;
+    width: 50px;
+    margin-left: 10px;
+    margin-top: 4px !important;
+    border-radius: 50%;
+    padding: 12px;
+  }
+  #HelpForm #back_arrow_help:hover{
+    background-color: #f4f4f4;
+  }
+  
+  #HelpForm span{
+    display: flex;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: solid;
+    margin-left: 76px;
+    margin-top: -48px;
+  }
+  #NightModeForm{
+    position: absolute;
+    overflow: hidden;
+    height: 330px;
+    width: 422px;
+    border-radius: 16px;
+    margin-left: -18px;
+    margin-top: -476px;
+    background: #ffffff;
+    transition: max-height 0.5s, box-shadow 0.5s; 
+    box-shadow: 6px 8px 26px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Set a high z-index to ensure it's on top of other elements */
+    display: none; /* Hide it by default */
+    padding: 20px; /* Add some padding for content */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    transition: height 0.5s ease; /* Add a transition for the height property */
+    transition: max-height 0.5s, box-shadow 0.5s, opacity 0.5s;
+  }
+  
+  #NightModeForm #back_arrow_nightmode{
+    display: flex;
+    cursor: pointer;
+    height: 47px;
+    width: 50px;
+    margin-left: 10px;
+    margin-top: 22px;
+    border-radius: 50%;
+    padding: 12px;
+  }
+  #NightModeForm #back_arrow_nightmode:hover{
+    background-color: #f4f4f4;
+  }
+  
+  #NightModeForm span{
+    display: flex;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: solid;
+    margin-left: 74px;
+    margin-top: -44px;
+  }
+  
+  .journey-banner {
+    text-align: left;
+    margin-left: 48px;
+    margin-top: 12px;
+  }
+  .journey-banner h1 {
+    font-size: 66px;
+    font-weight: 1000;
+    color: #434141;
+    margin-top: 200px;
+    margin-left: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .journey-banner h3{
+    font-weight: 400;
+    color: #454343;
+    margin-left: 50px;
+    font-size: 48px;
+    margin-left: 66px;
+    margin-top: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .journey-banner img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    margin-top: -60px;
+    margin-left: 1036px;
+    margin-bottom: 250px;
+  }
+  
+  
+  
+  .carousel {
+    width: 100%;
+    height: 450px;
+  }
+  .col-centered {
+    float:inline-start;
+    margin: 0 auto;
+  }
+  .carousel-inner {
+    height: 100%;
+  }
+  .carousel-item {
+    height: 100%;
+    position: relative;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 90%;
+    object-fit: contain;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  
+  
+  .carousel-indicators {
+    bottom: -20px;
+  
+  }
+  
+  .carousel-indicators li {
+    background-color: #dbd9d9;
+  }
+  .carousel-indicators .active {
+    background-color: #000;
+  }
+  
+  .about {
+    margin-top: -10px;
+  }
+  .about h1 {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #212020;
+    margin-top: 300px;
+    margin-bottom: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .about p {
+    font-size: 36px;
+    color: #363636;
+    line-height: 1.5;
+    padding: 0 0.5cm; /* This means 0 padding on top and bottom, and 0.5cm padding on left and right */
+    margin-bottom: 380px;
+    width: 100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  
+  .contactus{
+    background-color:#e7e7e7;
+    height: 900px;
+    width: 2026px;
+    margin-bottom: -30%;
+    padding-top: 40px;
+    padding-right: auto;
+    /*margin: auto;  Add this line to center the section */
+    /*color: #da532c; #e7e7e7; #f86008; #c46565;*/
+  }
+  .contactus h1 {
+    text-align: center;
+    padding-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    padding-right: 900px;
+    font-weight: 700;
+    color: #393939;
+  }
+  .contactus h1 span {
+    color: #8265d0; /* Purple color for "Us!" */
+  }
+  /* Add this code to align the contact section to the left */
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .form{
+    margin-left: 200px;
+    margin-bottom: 100px;
+    padding-top: 36px;
+  }
+  .form-group{
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .form-group input{
+    margin: 14px 0px;
+    padding: 4px 20px;
+    width: 360px;
+    height: 76px;
+    margin-right: 26px;
+    outline: none;
+    margin-top: -10px;
+    font-size: 21px;
+    color: #565656;
+    border: 2px solid #f0f0f0;
+    border-radius: 16px;
+    background-color: rgb(200, 200, 200);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .your-message{
+    height: 300px;
+    width: 736px;
+    margin-left: 6px;
+    background-color: rgb(200, 200, 200);
+    
+  }
+  .your-message textarea {
+    display: flex;
+    width: 100%;
+    resize:none;
+    outline: none;
+    border: none;
+    color: #565656;
+    /*
+    border-top-left-radius: 10px #e7e7e7;
+    border-top-right-radius:10px #e7e7e7;
+    border-radius:21px;
+    border-radius: 30px 30px 21px 21px; Make upper corners more rounded 
+    */
+    border-radius: 30px;
+    background-color: rgb(200, 200, 200);
+    padding: 10px; /* Add some padding for better spacing */
+    font-size: 22px;
+    overflow: auto;
+  }
+  
+  #sub {
+    background-color: #545353; /* Background color of the button */
+    color: #fff; /* Text color of the button */
+    border: none; /* Remove button border */
+    border-radius: 30px; /* Add some rounded corners */
+    padding: 10px 20px; /* Add padding to the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 21px; /* Adjust font size as needed */
+    margin-left: 276px;
+    margin-top: 48px;
+    height: 60px;
+    width: 220px;
+    transition: max-height 0.5s, box-shadow 0.5s; 
+    box-shadow: 6px 8px 26px rgba(0, 0, 0, 0.2);
+  }
+  
+  #sub:hover {
+    background-color: #247dd6; /* Change background color on hover */
+    font-weight: 400px; /* Add bold font on hover */
+    font-size: 24px;
+    height: 64px;
+    width: 227px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle box-shadow on hover */
+  }
+  
+  
+  .contact-image {
+    flex: 1;
+  }
+  .contact-image img {
+    width: 900px;
+    height: 700px;
+    padding-right: -400px;
+    margin-left: 120px;
+    margin-top: -10px;
+    /*
+    margin-top: -87px;
+    margin-right: -50px;
+    margin-bottom: -19px;
+    */
+  }
+  
+  /* Add media query to ensure responsiveness */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .contact-image,
+    .contact-form {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  
+  /*footer*/
+  footer {
+    background: #212529;
+    padding: 20px 0;
+  }
+  .text-small {
+    font-size: 0.9rem;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  a:hover, a:focus {
+    text-decoration: none;
+  }
+  
+  .form-control {
+    background: #212529;
+    border-color: #545454;
+  }
+  
+  .form-control:focus {
+    background: #212529;
+  }
+  
+  
+  
+  
+  hr {
+    width: 1920px;
+    border: 2px solid #9a9a9a;
+    margin-top: 2%;
+    margin-left: 50px;
+  }
+  footer p.small.text-muted {
+    margin-left: -50px;
+    margin-top: 30px;
+  }
+  
+  footer p.small.text-muted a.text-primary {
+    color: #FF5733; 
+  }
+  
+  
+  
+  /* Copyright text */
+  .copyright {
+    margin-left: 100px;
+    font-size: 24px;
+    margin-bottom: -30px;
+  }
+  
+  /* Social media icons */
+  .social-icons a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .social-icons a:hover {
+    color: #FF5733;
+  }
+  /* Add some margin to the social media icons for spacing */
+  .fa-facebook-f, .fa-twitter, .fa-instagram, .fa-linkedin, .fa-youtube {
+    font-size: 24px; /* Adjust the size as needed */
+    margin: 1px 8px !important; /* Adjust the margin as needed */
+    color: #ffffff; /* Set the color */
+  }
+  
+  .fa-facebook-f:hover, .fa-twitter:hover, .fa-instagram:hover, .fa-linkedin:hover, .fa-youtube:hover {
+    color: #FF5733; /* Change color on hover */
+  }
+  
+  
+  /* ==========================================
+      CUSTOM UTILS CLASSES
+    ========================================== */
+    body, html {
+      height: 99%;
+    }
